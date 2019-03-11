@@ -5,3 +5,4 @@
 
 * [Lecture 01](01)
 * [Lecture 02](02)
+* [Lecture 03](03)
