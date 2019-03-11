@@ -1,0 +1,76 @@
+#N canvas 0 23 1280 684 24;
+#X obj 98 100 piano 72;
+#X obj 98 40 bng 15 250 50 0 empty do empty 17 7 0 10 -262144 -1 -1
+;
+#X obj 229 39 bng 15 250 50 0 empty re empty 17 7 0 10 -262144 -1 -1
+;
+#X obj 359 38 bng 15 250 50 0 empty mi empty 17 7 0 10 -262144 -1 -1
+;
+#X obj 489 39 bng 15 250 50 0 empty fa empty 17 7 0 10 -262144 -1 -1
+;
+#X obj 616 38 bng 15 250 50 0 empty so empty 17 7 0 10 -262144 -1 -1
+;
+#X obj 229 99 piano 74;
+#X obj 359 98 piano 76;
+#X obj 489 99 piano 77;
+#X obj 616 98 piano 79;
+#X obj 749 37 bng 15 250 50 0 empty la empty 17 7 0 10 -262144 -1 -1
+;
+#X obj 749 97 piano 81;
+#X obj 877 35 bng 15 250 50 0 empty si empty 17 7 0 10 -262144 -1 -1
+;
+#X obj 1006 34 bng 15 250 50 0 empty do2 empty 17 7 0 10 -262144 -1
+-1;
+#X obj 877 95 piano 83;
+#X obj 1006 94 piano 84;
+#X msg 49 515 pd \; do bang \; mi bang \; so bang \; do2 bang \;;
+#X msg 254 509 pd \; ra bang \; fa bang \; la bang \;;
+#X obj 48 454 bng 15 250 50 0 empty chord-1 empty 17 7 0 10 -262144
+-1 -1;
+#X obj 257 445 bng 15 250 50 0 empty chord-2 empty 17 7 0 10 -262144
+-1 -1;
+#X obj 55 395 qlist;
+#X obj 53 351 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 196 199 +~;
+#X obj 503 630 dac~;
+#X obj 196 249 delwrite~ aux 10000;
+#X obj 579 264 +~;
+#X obj 506 206 delread~ aux 0;
+#X obj 685 358 delwrite~ buffer 10000;
+#X obj 738 211 delread~ buffer 500;
+#X obj 698 270 *~ 0.5;
+#X obj 812 410 noise~;
+#X obj 540 462 *~;
+#X obj 706 526 +~ 0;
+#X obj 812 459 *~ 0.5;
+#X connect 0 0 22 0;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 8 0;
+#X connect 5 0 9 0;
+#X connect 6 0 22 0;
+#X connect 7 0 22 0;
+#X connect 8 0 22 0;
+#X connect 9 0 22 0;
+#X connect 10 0 11 0;
+#X connect 11 0 22 0;
+#X connect 12 0 14 0;
+#X connect 13 0 15 0;
+#X connect 14 0 22 0;
+#X connect 15 0 22 0;
+#X connect 18 0 16 0;
+#X connect 19 0 17 0;
+#X connect 21 0 20 0;
+#X connect 22 0 24 0;
+#X connect 25 0 27 0;
+#X connect 25 0 31 0;
+#X connect 26 0 25 0;
+#X connect 28 0 29 0;
+#X connect 29 0 25 1;
+#X connect 30 0 33 0;
+#X connect 30 0 33 1;
+#X connect 31 0 23 0;
+#X connect 32 0 31 1;
+#X connect 33 0 32 0;
